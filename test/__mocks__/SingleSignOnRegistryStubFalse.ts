@@ -1,9 +1,9 @@
 import SingleSignOnRegistry from '../../src/sso/SingleSignOnRegistry';
 import SSOToken from '../../src/sso/SSOToken';
 
-export class SingleSignOnRegistryDummy implements SingleSignOnRegistry {
+export class SingleSignOnRegistryStubFalse implements SingleSignOnRegistry {
     isValid(token: string): boolean {
-        return true
+        return false
     }
 
     registerNewSession(userName: string, password: string): SSOToken | undefined {

@@ -1,13 +1,17 @@
 import SingleSignOnRegistry from '../../src/sso/SingleSignOnRegistry';
 import SSOToken from '../../src/sso/SSOToken';
 
-export class SingleSignOnRegistryDummy implements SingleSignOnRegistry {
+export class SingleSignOnRegistryStubFake implements SingleSignOnRegistry {
+    private validFake = false
+    //private userList: string[] = ['biko', 'cambia'];
     isValid(token: string): boolean {
-        return true
+        return this.validFake
     }
 
     registerNewSession(userName: string, password: string): SSOToken | undefined {
-        throw new Error('Dummy: not implemented');
+        
+        return new SSOToken('abcd')
+        
     }
 
     unregister(token: string): void {
